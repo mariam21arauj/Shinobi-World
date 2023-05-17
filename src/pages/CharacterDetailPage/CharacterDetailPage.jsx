@@ -23,10 +23,11 @@ export default function CharacterDetailPage(props){
     const loaded = () => {
         const uniqueTraitExists = 'uniqueTraits' in characterDetail;
         const jutsuExists = 'jutsu' in characterDetail;
-        const appearsInExists = 'appearsIn' in characterDetail.debut;
+        const debutExists = 'debut' in characterDetail
+        // const appearsInExists = 'appearsIn' in characterDetail.debut;
         console.log(uniqueTraitExists)
         console.log()
-        if(appearsInExists && uniqueTraitExists && jutsuExists){
+        if(debutExists && uniqueTraitExists && jutsuExists){
             return (
                 <div>
                     <h2>{characterDetail.name}</h2>
@@ -51,7 +52,7 @@ export default function CharacterDetailPage(props){
                     </div>
                 </div>
             )
-        } else if(appearsInExists){
+        } else if(!debutExists){
                 return (
                     <div>
                         <h2>{characterDetail.name}</h2>
@@ -60,8 +61,27 @@ export default function CharacterDetailPage(props){
                         </div>
                     </div>
                 )
+            }else if(debutExists && jutsuExists){
+                return(
+                    <div>
+                <h2>{characterDetail.name}</h2>
+                <div>
+                    <h3>{`${characterDetail.name} hello `}</h3>
+                </div>
+            </div>
+                )
+            } else{
+                if(debutExists){
+                    return (
+                        <div>
+                            <h2>{characterDetail.name}</h2>
+                            <div>
+                                <h3>{`${characterDetail.name} hello `}</h3>
+                            </div>
+                        </div>
+                    )
             }
-        
+        }
     }
     return <section>{characterDetail ? loaded(): loading()}</section>
 }
