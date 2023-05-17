@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 
 export default function CharactersPage(props){

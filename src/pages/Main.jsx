@@ -10,6 +10,12 @@ export default function Main(props){
             </article>
             <div>
             <Link to="/characters">Characters</Link>
+            &nbsp; | &nbsp;
+            <Link to="/villages">Villages</Link>
+            &nbsp; | &nbsp;
+            <Link to="/tailedbeasts">Tailed Beasts</Link>
+            &nbsp; | &nbsp;
+            <Link to="/clans">Clans</Link>
             </div>
         </section>
     )
