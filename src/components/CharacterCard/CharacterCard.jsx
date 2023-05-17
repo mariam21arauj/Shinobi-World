@@ -5,7 +5,8 @@ export default function CharacterCard(props){
     return (
         <>
         <Link to={`/characters/${props.characters.name}`} className="character-link">
-            <div style={{"background": `url(${props.characters.images}) no-repeat center center`, "WebkitBackgroundSize": "cover"}} className="item-card">
+            <div>
+            <img referrerPolicy="no-referrer" alt={props.characters.name} src={props.characters.images}></img>
                 <h2>Character: {props.characters.name}</h2>
             </div>
         </Link>

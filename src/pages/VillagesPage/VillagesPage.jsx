@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import VillageCard from "../../components/VillageCard/VillageCard";
+
 export default function VillagesPage(props){
     const [villages, setVillages] = useState([]);
 
