@@ -23,7 +23,7 @@ export default function CharactersPage(props){
             <div className="container">
             {
                 characters.map(char => {
-                    return <CharacterCard characters={char} key={char.name}/>
+                    return <CharacterCard characters={char} key={char.id}/>
                 })
             }
         </div>
