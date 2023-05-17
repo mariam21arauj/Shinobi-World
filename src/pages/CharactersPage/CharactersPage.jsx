@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
 
 export default function CharactersPage(props){
     const [characters, setCharacters] = useState([]);
@@ -20,15 +21,13 @@ export default function CharactersPage(props){
     }, [])
     return (
         <div>
-            {characters.map(char => {
-                console.log(characters)
-                const {name, id} = char
-                return(
-                    <Link to={`/character/${id}`} key={id}>
-                        <h1>Character: {name}</h1>
-                    </Link>
-                )
-            })}
+            <div className="container">
+            {
+                characters.map(char => {
+                    return <CharacterCard characters={char} key={char.name}/>
+                })
+            }
+        </div>
         </div>
     )
 }
