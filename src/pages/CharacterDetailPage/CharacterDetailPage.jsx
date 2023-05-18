@@ -15,7 +15,6 @@ export default function CharacterDetailPage(props){
             
         }
     }
-    console.log(characterDetail)
     useEffect(() => {
         fetchCharacterDetail();
     }, []) 

@@ -18,15 +18,21 @@ export default function TailedBeastsPage(props){
     useEffect(() => {
         fetchTailedBeasts();
     }, [])
-    return (
-        <div>
-            <div className="container">
-            {
-                tailedBeasts.map(beast => {
-                    return <TailedBeastCard tailedBeasts={beast} key={beast.name}/>
-                })
-            }
-        </div>
-        </div>
-    )
+    const loading = () => {
+        return <h1>🔥 Chakra loading 🔥</h1>
+    }
+    const loaded = () => {
+        return (
+            <div>
+                <div className="container">
+                {
+                    tailedBeasts.map(beast => {
+                        return <TailedBeastCard tailedBeasts={beast} key={beast.name}/>
+                    })
+                }
+            </div>
+            </div>
+        )
+    }
+    return <section>{tailedBeasts ? loaded(): loading()}</section>
 }

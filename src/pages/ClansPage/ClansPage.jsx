@@ -16,15 +16,22 @@ export default function ClansPage(props){
     useEffect(() => {
         fetchClans();
     }, [])
-    return (
-        <div>
-            <div className="container">
-            {
-                clans.map(cl => {
-                    return <ClanCard clans={cl} key={cl.name}/>
-                })
-            }
-        </div>
-        </div>
-    )
+    const loading = () => {
+        return <h1>🔥 Chakra loading 🔥</h1>
+    }
+    const loaded = () => {
+        return (
+            <div>
+                <div className="container">
+                {
+                    clans.map(cl => {
+                        return <ClanCard clans={cl} key={cl.name}/>
+                    })
+                }
+            </div>
+            </div>
+        )
+    }
+    return <section>{clans ? loaded(): loading()}</section>
+    
 }

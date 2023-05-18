@@ -18,15 +18,21 @@ export default function VillagesPage(props){
     useEffect(() => {
         fetchVillages();
     }, [])
-    return (
-        <div>
-            <div className="container">
-            {
-                villages.map(vill => {
-                    return <VillageCard villages={vill} key={vill.name}/>
-                })
-            }
-        </div>
-        </div>
-    )
+    const loading = () => {
+        return <h1>🔥 Chakra loading 🔥</h1>
+    }
+    const loaded =() =>{
+        return (
+            <div>
+                <div className="container">
+                {
+                    villages.map(vill => {
+                        return <VillageCard villages={vill} key={vill.name}/>
+                    })
+                }
+            </div>
+            </div>
+        )
+    }
+    return <section>{villages ? loaded(): loading()}</section>
 }

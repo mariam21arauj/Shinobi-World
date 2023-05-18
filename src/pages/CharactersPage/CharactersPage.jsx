@@ -18,15 +18,21 @@ export default function CharactersPage(props){
     useEffect(() => {
         fetchCharacters();
     }, [])
-    return (
-        <div>
-            <div className="container">
-            {
-                characters.map(char => {
-                    return <CharacterCard characters={char} key={char.id}/>
-                })
-            }
-        </div>
-        </div>
-    )
+    const loading = () => {
+        return <h1>🔥 Chakra loading 🔥</h1>
+    }
+    const loaded = () =>{
+        return (
+            <div>
+                <div className="container">
+                {
+                    characters.map(char => {
+                        return <CharacterCard characters={char} key={char.id}/>
+                    })
+                }
+            </div>
+            </div>
+        )
+    }
+    return <section>{characters ? loaded(): loading()}</section> 
 }
