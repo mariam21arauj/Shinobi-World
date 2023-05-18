@@ -80,6 +80,24 @@ export default function CharacterDetailPage(props){
                     </div>
                 </div>
                 )
+            }else if(!debutExists && jutsuExists){
+                return(
+                    <div>
+                        <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
+                        <h2>{characterDetail.name}</h2>
+                        <div>
+                            <h3>{`${characterDetail.name} does not have a debut in record`}</h3>
+                            <h4>Possess the following jutsus</h4>
+                        <ul>
+                            {characterDetail.jutsu.map(jtsu => {
+                                return(
+                                    <li>{jtsu}</li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                )
             } else{
                 if(debutExists && !jutsuExists){
                     return (

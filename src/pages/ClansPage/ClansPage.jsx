@@ -5,7 +5,7 @@ export default function ClansPage(props){
 
     const fetchClans = async () => {
         try {
-            const response = await fetch(' https://api.narutodb.xyz/clan')
+            const response = await fetch('https://api.narutodb.xyz/clan?page=1&limit=100')
             const clansData = await response.json();
             setclans(clansData.clans)
 

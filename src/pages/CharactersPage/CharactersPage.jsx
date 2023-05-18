@@ -6,7 +6,7 @@ export default function CharactersPage(props){
 
     const fetchCharacters = async () => {
         try {
-            const response = await fetch(' https://api.narutodb.xyz/character')
+            const response = await fetch(' https://api.narutodb.xyz/character?page=1&limit=100')
             const characterData = await response.json();
             console.log(characterData.characters)
             setCharacters(characterData.characters)
