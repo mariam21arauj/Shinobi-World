@@ -10,10 +10,12 @@ export default function CharacterDetailPage(props){
             const response = await fetch(url);
             const characterDetailData = await response.json()
             setCharacterDetail(characterDetailData)
+
         } catch (error) {
             
         }
     }
+    console.log(characterDetail)
     useEffect(() => {
         fetchCharacterDetail();
     }, []) 
@@ -27,11 +29,10 @@ export default function CharacterDetailPage(props){
         const debut = characterDetail.debut;
         const debutArray = [];
         const debutType = [];
-        for(const [key, value] of Object.entries(debut)){
-                debutType.push(key)
-                console.log(debutType)
-                debutArray.push(value)
-                console.log(debutArray)
+        if(debutExists){
+            for(const [key, value] of Object.entries(debut)){
+                debutType.push(key); debutArray.push(value)
+            }
         }
         if(debutExists && uniqueTraitExists && jutsuExists){
             return (
@@ -39,14 +40,12 @@ export default function CharacterDetailPage(props){
                     <h2>{characterDetail.name}</h2>
                     <div>
                     <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
-                        <h3>{characterDetail.name} appears in:</h3>
+                        <h3>{characterDetail.name} debuted in:</h3>
                         <ul>{debutType.map((type , idx) => {
                             return(
                         <li>{type}: {debutArray[idx]}</li>
                             )
-                            
                         })}
-
                         </ul>
                         <h4>Possess the following jutsus</h4>
                         <ul>
@@ -73,7 +72,7 @@ export default function CharacterDetailPage(props){
                         <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
                         <h2>{characterDetail.name}</h2>
                         <div>
-                            <h3>{`${characterDetail.name} does not have a debut recorded, jutsu, or unique trait. `}</h3>
+                            <h3>{`${characterDetail.name} does not have a debut, jutsu, or unique trait in record. `}</h3>
                         </div>
                     </div>
                 )
@@ -83,7 +82,13 @@ export default function CharacterDetailPage(props){
                         <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
                         <h2>{characterDetail.name}</h2>
                         <div>
-                            <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                            <h3>{characterDetail.name} debuted in:</h3>
+                            <ul>{debutType.map((type , idx) => {
+                            return(
+                        <li>{type}: {debutArray[idx]}</li>
+                            )
+                        })}
+                        </ul>
                             <h4>Possess the following jutsus</h4>
                         <ul>
                             {characterDetail.jutsu.map(jtsu => {
@@ -120,7 +125,13 @@ export default function CharacterDetailPage(props){
                             <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
                             <h2>{characterDetail.name}</h2>
                             <div>
-                                <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                                <h3>{characterDetail.name} debuted in:</h3>
+                                <ul>{debutType.map((type , idx) => {
+                                    return(
+                                        <li>{type}: {debutArray[idx]}</li>
+                                    )
+                                })}
+                                </ul>
                                 <h4>{characterDetail.name} does not possess jutsus, or unique traits.</h4>
                             </div>
                         </div>
