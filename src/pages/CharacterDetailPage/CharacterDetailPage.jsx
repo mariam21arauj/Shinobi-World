@@ -24,12 +24,14 @@ export default function CharacterDetailPage(props){
         const uniqueTraitExists = 'uniqueTraits' in characterDetail;
         const jutsuExists = 'jutsu' in characterDetail;
         const debutExists = 'debut' in characterDetail
-        
+
         if(debutExists && uniqueTraitExists && jutsuExists){
             return (
                 <div>
                     <h2>{characterDetail.name}</h2>
                     <div>
+                    <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
+
                         <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
                         <h4>Possess the following jutsus</h4>
                         <ul>
@@ -53,6 +55,7 @@ export default function CharacterDetailPage(props){
         } else if(!debutExists && !jutsuExists && !uniqueTraitExists){
                 return (
                     <div>
+                        <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
                         <h2>{characterDetail.name}</h2>
                         <div>
                             <h3>{`${characterDetail.name} does not have a debut recorded, jutsu, or unique trait. `}</h3>
@@ -62,10 +65,11 @@ export default function CharacterDetailPage(props){
             }else if(debutExists && jutsuExists){
                 return(
                     <div>
-                    <h2>{characterDetail.name}</h2>
-                    <div>
-                        <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
-                        <h4>Possess the following jutsus</h4>
+                        <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
+                        <h2>{characterDetail.name}</h2>
+                        <div>
+                            <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                            <h4>Possess the following jutsus</h4>
                         <ul>
                             {characterDetail.jutsu.map(jtsu => {
                                 return(
@@ -80,10 +84,11 @@ export default function CharacterDetailPage(props){
                 if(debutExists && !jutsuExists){
                     return (
                         <div>
+                            <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
                             <h2>{characterDetail.name}</h2>
                             <div>
-                            <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
-                            <h4>{characterDetail.name} does not possess jutsus, or unique traits.</h4>
+                                <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                                <h4>{characterDetail.name} does not possess jutsus, or unique traits.</h4>
                             </div>
                         </div>
                     )
