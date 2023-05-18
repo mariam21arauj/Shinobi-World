@@ -6,6 +6,7 @@ import VillagesPage from '../VillagesPage/VillagesPage';
 import TailedBeastsPage from '../TailedBeastsPage/TailedBeastsPage';
 import ClansPage from '../ClansPage/ClansPage';
 import CharacterDetailPage from '../CharacterDetailPage/CharacterDetailPage';
+import ClanDetailPage from '../ClanDetailPage/ClanDetailPage';
 import Main from '../Main';
 
 export default function App(){
@@ -20,6 +21,7 @@ export default function App(){
                     <Route path='/tailedbeasts' element={<TailedBeastsPage/>}/>
                     <Route path='/clans' element={<ClansPage/>}/>
                     <Route path='/character/:id' element={<CharacterDetailPage/>}/>
+                    <Route path='/clan/:id' element={<ClanDetailPage/>}/>
                 </Routes>
             </main>
         </div>
