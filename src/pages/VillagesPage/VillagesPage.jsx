@@ -24,6 +24,7 @@ export default function VillagesPage(props){
     const loaded =() =>{
         return (
             <div>
+                <h1>List of Villages</h1>
                 <div className="container">
                 {
                     villages.map(vill => {

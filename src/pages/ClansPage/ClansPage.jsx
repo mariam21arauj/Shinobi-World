@@ -22,6 +22,7 @@ export default function ClansPage(props){
     const loaded = () => {
         return (
             <div>
+                <h1>All Clans</h1>
                 <div className="container">
                 {
                     clans.map(cl => {

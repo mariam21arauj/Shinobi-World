@@ -10,12 +10,17 @@ import ClanDetailPage from '../ClanDetailPage/ClanDetailPage';
 import VillageDetailPage from '../VillageDetailPage/VillageDetailPage';
 import TailedBeastDetailPage from '../TailedBeastDetailPage/TailedBeastDetailPage';
 import Main from '../Main';
+import { useState } from 'react';
+import AuthPage from '../AuthPage/AuthPage';
 
 export default function App(){
+    const [user, setUser] = useState({})
     return (
         <div className='App'>
-            <NavBar/>
             <main className='container'>
+                {user ? (
+                <> 
+                <NavBar/>
                 <Routes>
                     <Route path='/' element={<Main/>}/>
                     <Route path='/characters' element={<CharactersPage/>}/>
@@ -27,7 +32,11 @@ export default function App(){
                     <Route path='/village/:id' element={<VillageDetailPage/>}/>
                     <Route path='/tailed-beast/:id' element={<TailedBeastDetailPage/>}/>
                 </Routes>
+                </>
+                ) : (
+                    <AuthPage/>
+                )} 
             </main>
         </div>
-    )
+    );
 }

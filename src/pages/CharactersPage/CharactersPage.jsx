@@ -24,6 +24,7 @@ export default function CharactersPage(props){
     const loaded = () =>{
         return (
             <div>
+                <h1>List of Characters in alphabetic order</h1>
                 <div className="container">
                 {
                     characters.map(char => {

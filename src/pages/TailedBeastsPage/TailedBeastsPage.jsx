@@ -24,6 +24,7 @@ export default function TailedBeastsPage(props){
     const loaded = () => {
         return (
             <div>
+                <h1> List of Tailed Beasts </h1>
                 <div className="container">
                 {
                     tailedBeasts.map(beast => {
