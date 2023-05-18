@@ -4,7 +4,7 @@ export default function TailedBeastCard(props){
     console.log(props)
     return (
         <>
-        <Link to={`/tailedbeasts/${props.tailedBeasts.name}`}>
+        <Link to={`/tailedbeasts/${props.tailedBeasts.id}`}>
                 <h2>Tailed Beast: {props.tailedBeasts.name}</h2>
         </Link>
         </>

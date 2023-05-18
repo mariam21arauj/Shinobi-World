@@ -23,16 +23,31 @@ export default function CharacterDetailPage(props){
     const loaded = () => {
         const uniqueTraitExists = 'uniqueTraits' in characterDetail;
         const jutsuExists = 'jutsu' in characterDetail;
-        const debutExists = 'debut' in characterDetail
-
+        const debutExists = 'debut' in characterDetail;
+        const debut = characterDetail.debut;
+        const debutArray = [];
+        const debutType = [];
+        for(const [key, value] of Object.entries(debut)){
+                debutType.push(key)
+                console.log(debutType)
+                debutArray.push(value)
+                console.log(debutArray)
+        }
         if(debutExists && uniqueTraitExists && jutsuExists){
             return (
                 <div>
                     <h2>{characterDetail.name}</h2>
                     <div>
                     <img referrerPolicy="no-referrer" alt={characterDetail.name} src={characterDetail.images}></img>
+                        <h3>{characterDetail.name} appears in:</h3>
+                        <ul>{debutType.map((type , idx) => {
+                            return(
+                        <li>{type}: {debutArray[idx]}</li>
+                            )
+                            
+                        })}
 
-                        <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                        </ul>
                         <h4>Possess the following jutsus</h4>
                         <ul>
                             {characterDetail.jutsu.map(jtsu => {
