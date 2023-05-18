@@ -24,9 +24,7 @@ export default function CharacterDetailPage(props){
         const uniqueTraitExists = 'uniqueTraits' in characterDetail;
         const jutsuExists = 'jutsu' in characterDetail;
         const debutExists = 'debut' in characterDetail
-        // const appearsInExists = 'appearsIn' in characterDetail.debut;
-        console.log(uniqueTraitExists)
-        console.log()
+        
         if(debutExists && uniqueTraitExists && jutsuExists){
             return (
                 <div>
@@ -52,31 +50,40 @@ export default function CharacterDetailPage(props){
                     </div>
                 </div>
             )
-        } else if(!debutExists){
+        } else if(!debutExists && !jutsuExists && !uniqueTraitExists){
                 return (
                     <div>
                         <h2>{characterDetail.name}</h2>
                         <div>
-                            <h3>{`${characterDetail.name} hello `}</h3>
+                            <h3>{`${characterDetail.name} does not have a debut recorded, jutsu, or unique trait. `}</h3>
                         </div>
                     </div>
                 )
             }else if(debutExists && jutsuExists){
                 return(
                     <div>
-                <h2>{characterDetail.name}</h2>
-                <div>
-                    <h3>{`${characterDetail.name} hello `}</h3>
+                    <h2>{characterDetail.name}</h2>
+                    <div>
+                        <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                        <h4>Possess the following jutsus</h4>
+                        <ul>
+                            {characterDetail.jutsu.map(jtsu => {
+                                return(
+                                    <li>{jtsu}</li>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </div>
-            </div>
                 )
             } else{
-                if(debutExists){
+                if(debutExists && !jutsuExists){
                     return (
                         <div>
                             <h2>{characterDetail.name}</h2>
                             <div>
-                                <h3>{`${characterDetail.name} hello `}</h3>
+                            <h3>{`${characterDetail.name} appears in: ${characterDetail.debut.appearsIn}`}</h3>
+                            <h4>{characterDetail.name} does not possess jutsus, or unique traits.</h4>
                             </div>
                         </div>
                     )
