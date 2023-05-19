@@ -49,9 +49,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Future Updates
 
-**Add pagination to the characters page to access them all**
-**Add search feature**
-**Add Naruto Merch virtual store** 
+### Add pagination to the characters page to access them all
+### Add search feature
+### Add Naruto Merch virtual store
 
 ## Acknowledgement to borrowed code for styling:
 https://codepen.io/GaganPrasad/pen/MWJOYMw
