@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import CharactersPage from '../CharactersPage/CharactersPage';
 import VillagesPage from '../VillagesPage/VillagesPage';
@@ -14,13 +15,13 @@ import { useState } from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 
 export default function App(){
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(getUser())
     return (
         <div className='App'>
             <main className='container'>
                 {user ? (
                 <> 
-                <NavBar/>
+                <NavBar user={user} setUser={setUser}/>
                 <Routes>
                     <Route path='/' element={<Main/>}/>
                     <Route path='/characters' element={<CharactersPage/>}/>
@@ -34,7 +35,7 @@ export default function App(){
                 </Routes>
                 </>
                 ) : (
-                    <AuthPage/>
+                    <AuthPage path="/" setUser={setUser} />
                 )} 
             </main>
         </div>

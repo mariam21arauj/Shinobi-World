@@ -1,7 +1,17 @@
-export default function NavBar(){
+import { Link } from "react-router-dom"
+import * as userService from '../../utilities/users-service'
+
+export default function NavBar({user, setUser}){
+    function handleLogOut() {
+        // Delegate to the users-service
+        userService.logOut();
+        // Update state will also cause a re-render
+        setUser(null);
+      }
     return(
         <nav>
-            <p>Go to our virtual store to get Naruto Merch</p>  
+            &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+            <p>&nbsp;Welcome, {user.name}. Go to our virtual store to get Naruto Merch</p>  
         </nav>
     )
 }

@@ -10,9 +10,10 @@ async function create(req, res) {
     try {
       // Add the user to the database
       const user = await User.create(req.body);
+      console.log(user)
       const token = createJWT(user)
-      console.log(res.json(token))
       res.json(token)
+      console.log(token)
     } catch (err) {
       // Client will check for non-2xx status code
       // 400 = Bad Request
@@ -21,7 +22,11 @@ async function create(req, res) {
   }
 
   function createJWT(user) {
-    return jwt.sign({ user }, process.env.SECRET, {expiresIn: '24h'});
+    return jwt.sign(
+
+      { user }, 
+      process.env.SECRET, 
+      {expiresIn: '24h'});
     // jwt.sign() is a special method that does two things:
     // 1) creates a json web token with the provided payload, server secret and optional settings
     // 2) crytographically signs the token with the provided secret so it can be validated later
