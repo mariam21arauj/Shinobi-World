@@ -29,7 +29,7 @@ app.get('/*', function(req, res){
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
-
+console.log('sanityCheck')
 // Configuring port 3001 instead of 3000 during development
 //  to avoide collision with React's dev server 
 const port = process.env.PORT || 3001

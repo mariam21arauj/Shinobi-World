@@ -47,6 +47,12 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 * Github: [@mariam21arauj](https://github.com/mariam21arauj)
 * LinkedIn: [@www.linkedin.com\/in\/mariam-araujo-](https://linkedin.com/in/www.linkedin.com\/in\/mariam-araujo-)
 
+## Future Updates
+
+**Add pagination to the characters page to access them all**
+**Add search feature**
+**Add Naruto Merch virtual store** 
+
 ## Acknowledgement to borrowed code for styling:
 https://codepen.io/GaganPrasad/pen/MWJOYMw
 https://codepen.io/technopersonne/pen/dXgrpj
