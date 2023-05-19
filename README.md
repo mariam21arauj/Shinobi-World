@@ -5,6 +5,8 @@
 
 > This project is a full-stack MERN application that was created for the Naruto fandom to learn and explore the Naruto World, and one day be able to also buy  merch related to the Anime and Manga. Enjoy! 🔥
 
+<img width="1912" alt="Screenshot 2023-05-19 at 12 33 12 PM" src="https://github.com/mariam21arauj/Shinobi-World/assets/114562006/45691723-c6d6-4e49-ab0d-0cf4efc9cecc">
+
 # 🏠 [Homepage](https://shinobi-world.herokuapp.com/)
 
 ## Technologies used
