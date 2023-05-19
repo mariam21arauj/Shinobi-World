@@ -1,22 +1,22 @@
-<h1 align="center">Welcome to shinobi-world 👋</h1>
+<h1 align="center">Welcome to Shinobi World 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
 > This project is a full-stack MERN application that was created for the Naruto fandom to learn and explore the Naruto World, and one day be able to also buy  merch related to the Anime and Manga. Enjoy! 🔥
 
-### 🏠 [Homepage](https://shinobi-world.herokuapp.com/)
+## 🏠 [Homepage](https://shinobi-world.herokuapp.com/)
 
-### Technologies used
-# Mongoose
-# Express
-# React
-# Node.js
-# JavaScript
-# CSS
+## Technologies used
+### Mongoose
+## Express
+## React
+## Node.js
+## JavaScript
+## CSS
 
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 In the project directory, you can run:
