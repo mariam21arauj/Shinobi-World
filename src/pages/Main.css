@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;700;800&display=swap');
+
+:root {
+    --primary: #F7971E;
+    --secondary: #F2C94C;
+    --text-color: #403d72;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background-color: var(--primary);
+    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(var(--primary));
+
+}
+
+.relative {
+    position: relative;
+}
+
+.urls {
+    display: flex;
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#title {
+    cursor: default;
+    font-size: 80px;
+    color: var(--text-color);
+}
+
+
+#img-control {
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--primary), var(--secondary));
+
+}
+
+#image {
+    position: absolute;
+    width: 130%;
+    max-width: 140%;
+    top: 52%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    transition: all ease-in-out 400ms;
+}
+
+#img-control:hover #image {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#img-caption {
+    top: 90%;
+    left: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#tribute-info {
+    width: 100%;
+    padding: 10px;
+    cursor: default;
+    border-radius: 5px;
+    background-color: #000;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 400ms;
+    margin: 10px;
+}
+
+.tribute-info1 {
+    width: 600px;
+    display: inline-flex;
+    padding: 10px;
+    cursor: default;
+    border-radius: 5px;
+    background-color: rgb(155, 62, 0);
+    color: aliceblue;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 400ms;
+    margin: 20px;
+}
+
+.tribute-info1:hover {
+    transform: scale(1.1);
+}
+
+#tribute-info:hover {
+    transform: scale(1.1);
+}
+
+
+
+#tribute-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #ffff;
+    transition: all ease-in-out 200ms;
+}
+
+
+
+@media only screen and (max-width: 425px) {
+    body {
+        font-size: 14px;
+    }
+
+    #title {
+        font-size: 40px;
+    }
+
+    #img-control {
+        width: 200px;
+        height: 200px;
+    }
+
+    #tribute-info {
+        width: 80vw;
+        margin-top: 10px;
+    }
+
+    .tribute-info1 {
+        width: 80vw;
+        margin-top: 10px;
+    }
+}
