@@ -14,7 +14,7 @@ import { useState } from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 
 export default function App(){
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState({})
     return (
         <div className='App'>
             <main className='container'>
