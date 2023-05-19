@@ -5,10 +5,10 @@
 
 > This project is a full-stack MERN application that was created for the Naruto fandom to learn and explore the Naruto World, and one day be able to also buy  merch related to the Anime and Manga. Enjoy! 🔥
 
-## 🏠 [Homepage](https://shinobi-world.herokuapp.com/)
+# 🏠 [Homepage](https://shinobi-world.herokuapp.com/)
 
 ## Technologies used
-### Mongoose
+## Mongoose
 ## Express
 ## React
 ## Node.js
