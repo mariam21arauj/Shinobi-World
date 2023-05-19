@@ -6,7 +6,7 @@ export default function Main(props){
         <section className="main-page">
             <h1 id='title'>Welcome to Shinobi World</h1>
             <article className="tribute-info1">
-                Welcome, User. This app is designed to help you navigate the Naruto World
+                This app is designed to help you navigate the Naruto World
                 and learn more about their characters, the Clans, Villages, and Tailed Beasts.
             </article>
             <div id="img-div" className="relative">

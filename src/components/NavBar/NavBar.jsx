@@ -10,8 +10,11 @@ export default function NavBar({user, setUser}){
       }
     return(
         <nav>
-            &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-            <p>&nbsp;Welcome, {user.name}. Go to our virtual store to get Naruto Merch</p>  
+            <span>&nbsp; So good to see you, {user.name}!</span>
+            &nbsp; | &nbsp;
+            <Link to="/">Home Page</Link>
+            &nbsp; | &nbsp;
+            <Link to="" onClick={handleLogOut}>Log Out</Link> 
         </nav>
     )
 }
