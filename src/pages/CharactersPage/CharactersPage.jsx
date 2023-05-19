@@ -30,9 +30,9 @@ export default function CharactersPage(props){
                     <div className="first">
                         <img src="http://pre12.deviantart.net/91c4/th/pre/i/2012/064/9/a/uzumaki_naruto_vs_uchiha_sasuke_by_xabracadabra-d4rsna5.jpg"/>
                     </div>
-                    {/* <input type="radio" name="rerun" id="retrigger--1" class="retrigger"/>
-                    <input type="radio" name="rerun" id="retrigger--2" checked="onChange" class="retrigger"/>
-                    <div class="bg"></div> */}
+                    <input type="radio" name="rerun" id="retrigger--1" class="retrigger"/>
+                    <input type="radio" name="rerun" id="retrigger--2" checked="checked" class="retrigger"/>
+                    <div class="bg"></div>
                     
                     <div className="second">
                     {
