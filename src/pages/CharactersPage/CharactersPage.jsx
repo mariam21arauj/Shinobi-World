@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import './CharactersPage.css'
 
 export default function CharactersPage(props){
     const [characters, setCharacters] = useState([]);
@@ -23,14 +24,25 @@ export default function CharactersPage(props){
     }
     const loaded = () =>{
         return (
-            <div>
-                <h1>List of Characters in alphabetic order</h1>
-                <div className="container">
-                {
-                    characters.map(char => {
-                        return <CharacterCard characters={char} key={char.id}/>
-                    })
-                }
+            <div className="page">
+                <h1 id="title1">List of Characters in alphabetic order</h1>
+                <div className="characters">
+                    <div class="first">
+                        <img src="http://pre12.deviantart.net/91c4/th/pre/i/2012/064/9/a/uzumaki_naruto_vs_uchiha_sasuke_by_xabracadabra-d4rsna5.jpg"/>
+                    </div>
+    
+                    <input type="radio" name="rerun" id="retrigger--1" class="retrigger"/>
+                    <input type="radio" name="rerun" id="retrigger--2" checked="checked" class="retrigger"/>
+                    <div class="bg"></div>
+                    <div className="second">
+                    {
+                        characters.map(char => {
+                            return (
+                                <div id="tribute-info2"> <CharacterCard characters={char} key={char.id}/></div>
+                        )
+                        })
+                    }
+                    </div>
             </div>
             </div>
         )
