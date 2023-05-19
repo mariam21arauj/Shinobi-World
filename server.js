@@ -22,6 +22,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
 // API routes, before "catch all" routes
+app.use('/api/users', require('./routes/api/users'));
 
 // "Catch all" route. Returns the intdex.html on all non-AJAX requests. 
 app.get('/*', function(req, res){
